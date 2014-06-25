@@ -39,7 +39,7 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 gem 'pry'
 gem 'slim-rails'
-gem 'thin'
+#gem 'thin'
 gem 'therubyracer'
 gem 'mail'
 gem 'simple_form'
