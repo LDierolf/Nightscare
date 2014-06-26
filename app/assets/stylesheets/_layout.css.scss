@@ -5,8 +5,40 @@
 
 body{
   color: $main-color;
+  // basic reset
+  margin: 0;
+  padding: 0;
 }
 
 .container {
   @include outer-container;
+  margin-top: 40px;
+}
+
+header {
+  @include box-sizing(border-box);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height:40px;
+  background-color: $header_color;
+  .inner_nav_container{
+    .logo{
+      padding: 5px;
+      float: left;
+    }
+
+    ul.navigation{
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      float: left;
+      li{
+        display: inline-block;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    }
+  }
 }
