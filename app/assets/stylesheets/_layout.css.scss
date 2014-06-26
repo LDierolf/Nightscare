@@ -1,0 +1,12 @@
+@import "bourbon";
+@import "grid-settings";
+@import "neat";
+@import "color_sheme";
+
+body{
+  color: $main-color;
+}
+
+.container {
+  @include outer-container;
+}
