@@ -37,10 +37,11 @@ gem 'spring',        group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-gem 'pry'
+group :development, :test do
+  gem 'pry'
+end
+
 gem 'slim-rails'
-#gem 'thin'
-gem 'therubyracer'
 gem 'mail'
 gem 'simple_form'
 
