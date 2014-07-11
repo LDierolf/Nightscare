@@ -7,6 +7,7 @@
 html{
   font-family: 'Nunito', sans-serif;
   font-weight: 300 ;
+  background-color: $main-background-color;
 }
 
 body{
@@ -14,6 +15,11 @@ body{
   // basic reset
   margin: 0;
   padding: 0;
+  width: 100%;
+}
+
+#content{
+  padding-top: 80px;
 }
 
 .container {
@@ -25,9 +31,59 @@ div.seperator{
   @include span-columns(12);
   height: 10px;
 }
+header.full_screen{
+  background-image: url("<%= asset_path 'nightscare_bg.jpg' %>");
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+  .welcome_container{
+    position: absolute;
+    width: 100%;
+    a{
+      margin-left: 140px;
+    }
+    .fa{
+      color: white;
+    }
+  }
+
+  .welcome_text_big{
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    background-image: url("<%= asset_path 'header_text_bg.png' %>");
+    width: 800px;
+    @include box-sizing(border-box);
+    padding: 20px;
+    h1{
+      text-align: center;
+      font-size: 4em;
+      color: white;
+      margin: 0;
+    }
+  }
+  .welcome_text_small{
+    margin-left: auto;
+    margin-right: auto;
+
+    background-image: url("<%= asset_path 'header_text_bg.png' %>");
+    width: 400px;
+    @include box-sizing(border-box);
+    padding: 20px;
+    h1{
+      text-align: center;
+      font-size: 1.5em;
+      font-weight: 200;
+      color: white;
+      margin: 0;
+    }
+  }
+}
 header.nav {
   @include box-sizing(border-box);
-  position: absolute;
+  display: none;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -71,20 +127,25 @@ header.nav {
       margin: 0;
       padding: 0;
       float: right;
-      li{
-        display: inline-block;
-        padding: 20px;
-        padding-top: 30px;
-        font-size: 1em;
-
-        a {
+      a {
           text-decoration: none;
           color: white;
         }
 
         a:hover{
-
+          padding-bottom: 26px;
+          border-bottom: 3px solid $main-color;
+          color: $main-color;
         }
+      li{
+        .active{
+          padding-bottom: 26px;
+          border-bottom: 3px solid $main-color;
+        }
+        display: inline-block;
+        padding: 20px;
+        padding-top: 30px;
+        font-size: 1em;
       }
     }
   }
@@ -101,20 +162,21 @@ footer{
   }
 }
 
-.heading_giant{
-  @include span-columns(12);
-  h1 {
-    font-size: 3em;
-    padding: 10px;
-    text-align: center;
-  }
-  span.nightscare:before{
+span.nightscare:before{
     content: " ";
   }
   span.nightscare{
     font-weight: lighter;
     font-family: 'Pacifico', cursive;
     color: $secondary-color1;
+  }
+
+.heading_giant{
+  @include span-columns(12);
+  h1 {
+    font-size: 3em;
+    padding: 10px;
+    text-align: center;
   }
 }
 div.text_heading{
